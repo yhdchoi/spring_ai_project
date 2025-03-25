@@ -1,2 +1,1 @@
-# ai_photo_generator
-AI Photo Generator
+# ai_chatbot
