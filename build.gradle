@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.yhdc'
-version = '0.0.1-SNAPSHOT'
+version = '1.0.0'
 
 java {
 	toolchain {
@@ -28,11 +28,18 @@ ext {
 }
 
 dependencies {
+	// WEB
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	// AI
 	implementation 'org.springframework.ai:spring-ai-openai-spring-boot-starter'
-	implementation 'org.springframework.ai:spring-ai-vertex-ai-gemini-spring-boot-starter'
+//	implementation 'org.springframework.ai:spring-ai-vertex-ai-gemini-spring-boot-starter'
+
+	// DEV
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+
+	// TEST
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
