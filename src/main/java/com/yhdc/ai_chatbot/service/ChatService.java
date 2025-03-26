@@ -1,10 +1,12 @@
 package com.yhdc.ai_chatbot.service;
 
-import groovy.util.logging.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.yhdc.ai_chatbot.dto.ChatRequestRecord;
+import com.yhdc.ai_chatbot.dto.ChatResponseDto;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.chat.model.ChatModel;
 import org.springframework.ai.chat.model.ChatResponse;
+import org.springframework.ai.chat.model.Generation;
 import org.springframework.ai.chat.prompt.Prompt;
 import org.springframework.ai.openai.OpenAiChatOptions;
 import org.springframework.http.HttpStatus;
@@ -14,24 +16,23 @@ import org.springframework.stereotype.Service;
 import java.util.HashMap;
 
 @Slf4j
+@RequiredArgsConstructor
 @Service
 public class ChatService {
 
-    private static final Logger log = LoggerFactory.getLogger(ChatService.class);
     private final ChatModel chatModel;
-
-    public ChatService(ChatModel chatModel) {
-        this.chatModel = chatModel;
-    }
+//    private final ChatClient chatClient;
 
     /**
      * Chat response
      *
-     * @param prompt
+     * @param chatRequestRecord
      * @implNote
      * @implSpec
      */
-    public ResponseEntity<?> getResponseCustom(String prompt) {
+    public ResponseEntity<?> getChatResponse(ChatRequestRecord chatRequestRecord) {
+
+        final String prompt = chatRequestRecord.prompt();
 
         ChatResponse chatResponse = chatModel.call(
                 new Prompt(
@@ -43,12 +44,22 @@ public class ChatService {
                 ));
 
         log.info("ChatResponse: {}", chatResponse.toString());
+
         final String responseText = chatResponse.getResult().getOutput().getText();
+        final String mediaName = chatResponse.getResult().getOutput().getMedia().getFirst().getName();
 
         HashMap<String, Object> response = new HashMap<>();
         response.put("Response", responseText);
         log.info("Response: {}", responseText);
         return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+
+    private ChatResponseDto getChatResponseDto(Generation generation) {
+        ChatResponseDto chatResponseDto = new ChatResponseDto();
+        chatResponseDto.setTextResponse(generation.getOutput().getText());
+
+        return chatResponseDto;
     }
 
 }
