@@ -1,1 +1,8 @@
-# ai_chatbot
+# Ai Chatbot
+## Architecture
+
+
+## API
+
+
+## 
