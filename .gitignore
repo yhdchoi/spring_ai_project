@@ -30,3 +30,6 @@ replay_pid*
 *.iws
 *.iml
 *.ipr
+
+## Config file
+.env
