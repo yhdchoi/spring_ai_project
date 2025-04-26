@@ -25,6 +25,8 @@ build
 hs_err_pid*
 replay_pid*
 
-
-#IDE
-*.idea
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
