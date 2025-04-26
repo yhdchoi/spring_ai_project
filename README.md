@@ -1,8 +1,13 @@
-# Ai Chatbot
+# Spring Ai Project
 ## Architecture
 
 
-## API
+## Model
 
 
-## 
+## Vector Database
+
+
+## MCP
+
+
