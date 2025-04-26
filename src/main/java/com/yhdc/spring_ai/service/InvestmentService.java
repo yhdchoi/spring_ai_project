@@ -1,4 +1,4 @@
-package com.yhdc.ai_chatbot.service;
+package com.yhdc.spring_ai.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

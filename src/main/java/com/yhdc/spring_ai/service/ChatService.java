@@ -1,7 +1,7 @@
-package com.yhdc.ai_chatbot.service;
+package com.yhdc.spring_ai.service;
 
-import com.yhdc.ai_chatbot.dto.ChatRequestRecord;
-import com.yhdc.ai_chatbot.dto.ChatResponseDto;
+import com.yhdc.spring_ai.dto.ChatRequestRecord;
+import com.yhdc.spring_ai.dto.ChatResponseDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.chat.model.ChatModel;

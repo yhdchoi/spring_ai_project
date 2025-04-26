@@ -1,10 +1,10 @@
-package com.yhdc.ai_chatbot;
+package com.yhdc.spring_ai;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AiChatbotApplicationTests {
+class SpringAiProjectApplicationTests {
 
 	@Test
 	void contextLoads() {

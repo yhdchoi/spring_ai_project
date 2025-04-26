@@ -1,4 +1,4 @@
-package com.yhdc.ai_chatbot.dto;
+package com.yhdc.spring_ai.dto;
 
 import lombok.Data;
 

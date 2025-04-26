@@ -1,4 +1,4 @@
-package com.yhdc.ai_chatbot.service;
+package com.yhdc.spring_ai.service;
 
 import groovy.util.logging.Slf4j;
 import org.slf4j.Logger;

@@ -1,8 +1,8 @@
-package com.yhdc.ai_chatbot.controller;
+package com.yhdc.spring_ai.controller;
 
-import com.yhdc.ai_chatbot.dto.ChatRequestRecord;
-import com.yhdc.ai_chatbot.service.ChatService;
-import com.yhdc.ai_chatbot.service.ImageService;
+import com.yhdc.spring_ai.dto.ChatRequestRecord;
+import com.yhdc.spring_ai.service.ChatService;
+import com.yhdc.spring_ai.service.ImageService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
