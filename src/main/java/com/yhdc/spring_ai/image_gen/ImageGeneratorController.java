@@ -1,34 +1,18 @@
-package com.yhdc.spring_ai.controller;
+package com.yhdc.spring_ai.image_gen;
 
-import com.yhdc.spring_ai.dto.ChatRequestRecord;
-import com.yhdc.spring_ai.service.ChatService;
-import com.yhdc.spring_ai.service.ImageService;
+import com.yhdc.spring_ai.chat.OpenAiChatModelService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class AiController {
+public class ImageGeneratorController {
 
-    private final ChatService chatService;
     private final ImageService imageService;
 
-    public AiController(ChatService chatService, ImageService imageService) {
-        this.chatService = chatService;
+    public ImageGeneratorController(OpenAiChatModelService openAiChatModelService, ImageService imageService) {
         this.imageService = imageService;
-    }
-
-
-    /**
-     * Custom chat
-     *
-     * @param chatRequestRecord
-     */
-    @GetMapping("/open-ai/chat-ai")
-    public ResponseEntity<?> chatResponse(@RequestBody ChatRequestRecord chatRequestRecord) {
-        return chatService.getChatResponse(chatRequestRecord);
     }
 
 
@@ -48,6 +32,5 @@ public class AiController {
                 Integer.parseInt(height),
                 Integer.parseInt(width));
     }
-
 
 }

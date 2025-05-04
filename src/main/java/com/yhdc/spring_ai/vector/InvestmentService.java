@@ -1,4 +1,4 @@
-package com.yhdc.spring_ai.service;
+package com.yhdc.spring_ai.vector;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -17,7 +17,6 @@ import java.util.Map;
 public class InvestmentService {
 
     private final ChatModel chatModel;
-
 
     public ResponseEntity<?> getInvestmentAdvice(String market) {
         try {

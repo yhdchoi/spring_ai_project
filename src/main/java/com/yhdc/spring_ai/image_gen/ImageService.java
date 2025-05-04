@@ -1,4 +1,4 @@
-package com.yhdc.spring_ai.service;
+package com.yhdc.spring_ai.image_gen;
 
 import groovy.util.logging.Slf4j;
 import org.slf4j.Logger;

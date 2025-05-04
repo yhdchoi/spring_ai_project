@@ -1,13 +1,11 @@
-package com.yhdc.spring_ai.service;
+package com.yhdc.spring_ai.chat;
 
-import com.yhdc.spring_ai.dto.ChatRequestRecord;
-import com.yhdc.spring_ai.dto.ChatResponseDto;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.chat.model.ChatModel;
 import org.springframework.ai.chat.model.ChatResponse;
 import org.springframework.ai.chat.model.Generation;
 import org.springframework.ai.chat.prompt.Prompt;
+import org.springframework.ai.openai.OpenAiChatModel;
 import org.springframework.ai.openai.OpenAiChatOptions;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,13 +13,16 @@ import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 
+@Deprecated
 @Slf4j
-@RequiredArgsConstructor
 @Service
-public class ChatService {
+public class OpenAiChatModelService {
 
     private final ChatModel chatModel;
-//    private final ChatClient chatClient;
+
+    public OpenAiChatModelService(OpenAiChatModel chatModel) {
+        this.chatModel = chatModel;
+    }
 
     /**
      * Chat response
@@ -58,7 +59,6 @@ public class ChatService {
     private ChatResponseDto getChatResponseDto(Generation generation) {
         ChatResponseDto chatResponseDto = new ChatResponseDto();
         chatResponseDto.setTextResponse(generation.getOutput().getText());
-
         return chatResponseDto;
     }
 

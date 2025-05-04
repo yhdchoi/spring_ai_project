@@ -1,4 +1,4 @@
-package com.yhdc.spring_ai.dto;
+package com.yhdc.spring_ai.chat;
 
 import java.util.Objects;
 
