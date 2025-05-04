@@ -14,16 +14,47 @@
 ![figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
 ![intellij](https://img.shields.io/badge/IntelliJ_IDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white)
 
-## Architecture
+## Getting started
 
-<img src="./readme/image/architecture-diagram.png" width="800" height="800" />
-![architecture](./readme/image/architecture-diagram.png)
+> The project is packaged into docker images.
+> In this case you must install Docker on your environment to start the application.
+> To run the project, please run the command below.
 
-## LLM
+```shell
+sudo sh start.sh
+```
 
+> ❗️Note: Must create your own api keys for the Ai models.
+> Currently, OpenApi and Anthropic(Claude) api keys must be defined in the environment file.
 
-## MCP
+## Ai Chatbot
 
+![chatbot](./readme/image/chat-generator-diagram.png)
 
-## Vector Database
+> I have created a simple Ai chatbot using multiple models.
+> In future release I will be adding more models to the service.
 
+## Image Generator
+
+> Along with the chatbot, I have implemented an image generator.
+
+## Advisor
+
+![advisor](./readme/image/advisor-diagram.png)
+
+> I have put together a Financial Advisor as an example. 
+> But it can be converted to other types of advisor depends on the document you ingest to the vector database. 
+
+### RAG - Retrieval Augmented Generation
+
+> It combines 'Retrieval-based Methods' with 'Generative Models' to produce more accurate and contextually relevant
+> outputs.
+> In other words, it allows LLMs to access external knowledge sources, mitigating limitations like outdated information
+> or knowledge cutoff
+
+### Not RAG
+
+![not_rag](./readme/image/not-rag-diagram.png)
+
+> When without the RAG, the user fetches all of his/her documents along with the query.
+> Sending al of the documents which some part of them are not relevant to the user query is not efficient and accurate.
