@@ -21,7 +21,7 @@
 > To run the project, please run the command below.
 
 ```shell
-sudo sh start.sh
+.gradlew build
 ```
 
 > ❗️Note: Must create your own api keys for the Ai models.
